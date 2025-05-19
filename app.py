@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from retriever import Retriever
 from gemini import ask_gemini
 import uvicorn
-from web_scraper import fetch_info_tunduk
+# from web_scraper import fetch_info_tunduk
 
 app = FastAPI()
 retriever = Retriever()
