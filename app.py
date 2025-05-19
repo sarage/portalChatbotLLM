@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from pydantic import BaseModel
 from retriever import Retriever
@@ -6,6 +7,9 @@ from web_scraper import fetch_info_tunduk
 
 app = FastAPI()
 retriever = Retriever()
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
 
 
 class Query(BaseModel):
