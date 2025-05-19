@@ -9,10 +9,8 @@ from web_scraper import fetch_info_tunduk
 app = FastAPI()
 retriever = Retriever()
 
-port = int(os.environ.get("PORT", 8000))  # 8000 - порт по умолчанию
-
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    uvicorn.run("app:app", host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
 
 
 class Query(BaseModel):
